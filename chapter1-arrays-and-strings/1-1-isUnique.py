@@ -11,6 +11,5 @@ def isUnique(string):
       return False
   return True
 
-
 if __name__ == '__main__':
    print(isUnique("abcdefghhi"))
