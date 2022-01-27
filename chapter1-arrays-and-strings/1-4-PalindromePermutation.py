@@ -4,5 +4,23 @@
 
 # ababa
 
+# CTCI Algorithm  to solve this problem: use a hashmap to count the number of occurences of each letter and only 1 letter is allowed to have an odd number of occurrences
 
+def isArrangedPalindrome(word):
+  wordDict = {}
+  for letter in word:
+    if(letter not in wordDict):
+      wordDict[letter] = 1
+    else:
+      wordDict[letter] += 1
+  return passesCheck(wordDict)
 
+def passesCheck(dict):
+  numOfOdds = 0
+  for key in dict:
+    if(dict[key]%2 == 1):
+      numOfOdds+=1
+  return numOfOdds < 2
+
+if __name__ == '__main__':
+  print(isArrangedPalindrome("ababa"))
